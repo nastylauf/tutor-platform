@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Репетиторы — TutorHub</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-content">
+          <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span class="logo-text">TutorHub</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="tutors.html" class="active">Репетиторы</a></li>
+            <li><a href="subjects.html">Предметы</a></li>
+            <li><a href="profile.html">Кабинет</a></li>
+          </ul>
+          <div class="auth-buttons">
+            <button class="btn-login">Вход</button>
+            <button class="btn-signup">Регистрация</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="tutors-page">
+      <div class="container">
+        <h1>Найдите своего репетитора</h1>
+
+        <div class="filters-and-sort">
+          <div class="filters">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Поиск по имени или предмету..."
+              class="search-input"
+            />
+
+            <select id="filterSubject" class="filter-select">
+              <option value="">Все предметы</option>
+              <option value="Математика">Математика</option>
+              <option value="Английский">Английский</option>
+              <option value="Русский">Русский</option>
+              <option value="Физика">Физика</option>
+              <option value="Химия">Химия</option>
+              <option value="Информатика">Информатика</option>
+            </select>
+
+            <select id="filterPrice" class="filter-select">
+              <option value="">Все цены</option>
+              <option value="0-700">До 700 ₽/час</option>
+              <option value="700-1000">700–1000 ₽/час</option>
+              <option value="1000+">От 1000 ₽/час</option>
+            </select>
+
+            <input
+              type="number"
+              id="filterRating"
+              placeholder="Мин. рейтинг"
+              min="0"
+              max="5"
+              step="0.1"
+              class="filter-input"
+            />
+          </div>
+
+          <div class="sort-container">
+            <label>Сортировать:</label>
+            <select id="sortSelect" class="filter-select">
+              <option value="rating-desc">По рейтингу ↓</option>
+              <option value="rating-asc">По рейтингу ↑</option>
+              <option value="price-asc">По цене ↑</option>
+              <option value="price-desc">По цене ↓</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="tutorsGrid" class="tutors-grid">
+          <!-- Карточки загружаются через JS -->
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
