@@ -3,13 +3,6 @@ import { tutorsData } from '../data/tutors.js';
 import { getFromLocalStorage, saveToLocalStorage } from '../modules/utils.js';
 
 export function initProfilePage() {
-  // Плавное появление страницы
-  document.body.style.opacity = '0';
-  document.body.style.transition = 'opacity 0.4s ease';
-  setTimeout(() => {
-    document.body.style.opacity = '1';
-  }, 100);
-
   // Данные из localStorage
   let myLessons = getFromLocalStorage('myLessons', []);
   let favorites = getFromLocalStorage('favorites', []);
