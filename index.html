@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TutorHub - Найдите своего репетитора</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-content">
+          <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span class="logo-text">TutorHub</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#tutors">Репетиторы</a></li>
+            <li><a href="#subjects">Предметы</a></li>
+            <li><a href="#about">О нас</a></li>
+          </ul>
+          <div class="auth-buttons">
+            <button class="btn-login">Вход</button>
+            <button class="btn-signup">Регистрация</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Героческий раздел -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Найдите идеального репетитора</h1>
+          <p>Обучение от лучших специалистов, когда вам удобно</p>
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Название интересующего предмета"
+              class="search-input"
+            />
+            <button class="btn-search">Поиск</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Репетиторов</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Предметов</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">10k+</div>
+              <div class="stat-label">Студентов</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="illustration">
+            <div class="book"></div>
+            <div class="person"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Популярные предметы -->
+    <section id="subjects" class="subjects">
+      <div class="container">
+        <h2>Популярные предметы</h2>
+        <div class="subjects-grid">
+          <div class="subject-card" data-subject="Математика">
+            <div class="subject-icon">🔢</div>
+            <h3>Математика</h3>
+            <p>245 репетиторов</p>
+          </div>
+          <div class="subject-card" data-subject="Английский">
+            <div class="subject-icon">🌍</div>
+            <h3>Английский язык</h3>
+            <p>189 репетиторов</p>
+          </div>
+          <div class="subject-card" data-subject="Русский">
+            <div class="subject-icon">📖</div>
+            <h3>Русский язык</h3>
+            <p>156 репетиторов</p>
+          </div>
+          <div class="subject-card" data-subject="Физика">
+            <div class="subject-icon">⚛️</div>
+            <h3>Физика</h3>
+            <p>134 репетиторов</p>
+          </div>
+          <div class="subject-card" data-subject="Химия">
+            <div class="subject-icon">🧪</div>
+            <h3>Химия</h3>
+            <p>98 репетиторов</p>
+          </div>
+          <div class="subject-card" data-subject="Информатика">
+            <div class="subject-icon">💻</div>
+            <h3>Информатика</h3>
+            <p>178 репетиторов</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Список репетиторов -->
+    <section id="tutors" class="tutors">
+      <div class="container">
+        <h2>Лучшие репетиторы</h2>
+        <div class="filters">
+          <select id="filterSubject" class="filter-select">
+            <option value="">Все предметы</option>
+            <option value="Математика">Математика</option>
+            <option value="Английский">Английский</option>
+            <option value="Русский">Русский</option>
+            <option value="Физика">Физика</option>
+            <option value="Химия">Химия</option>
+            <option value="Информатика">Информатика</option>
+          </select>
+          <select id="filterPrice" class="filter-select">
+            <option value="">Все цены</option>
+            <option value="0-500">До 500 ₽/час</option>
+            <option value="500-1000">500-1000 ₽/час</option>
+            <option value="1000+">От 1000 ₽/час</option>
+          </select>
+          <input
+            type="number"
+            id="filterRating"
+            class="filter-input"
+            placeholder="Минимальная оценка (0-5)"
+            min="0"
+            max="5"
+          />
+        </div>
+        <div id="tutorsGrid" class="tutors-grid">
+          <!-- Карточки репетиторов будут добавлены через JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- О платформе -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Почему выбирают TutorHub?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Проверенные специалисты</h3>
+            <p>Все репетиторы прошли тщательную проверку и верификацию</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Гибкое расписание</h3>
+            <p>Выбирайте время и место занятий, которые удобны вам</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Честные цены</h3>
+            <p>Прозрачное ценообразование без скрытых комиссий</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Гарантия качества</h3>
+            <p>Если вы не довольны, вы получите возврат средств</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Персональный подход</h3>
+            <p>Каждый репетитор подбирает программу под ваши цели</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Техподержка 24/7</h3>
+            <p>Мы всегда готовы помочь вам решить любые вопросы</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+      <div class="container">
+        <h2>Отзывы студентов</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              "Нашла отличного репетитора по английскому. За 3 месяца мой уровень вырос с A2 на B1.
+              Рекомендую!"
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">МА</div>
+              <div>
+                <div class="author-name">Мария А.</div>
+                <div class="author-role">Студентка</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              "Помощь с подготовкой к ЕГЭ была мне очень нужна. Математика казалась невозможной, но
+              репетитор помог разобраться!"
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">ИИ</div>
+              <div>
+                <div class="author-name">Иван И.</div>
+                <div class="author-role">Выпускник школы</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              "Удобная платформа, профессиональные преподаватели, справедливые цены. Берут занятия
+              всей семьей уже год!"
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">ЕЕ</div>
+              <div>
+                <div class="author-name">Елена Е.</div>
+                <div class="author-role">Родитель</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="cta">
+      <div class="container">
+        <h2>Готовы начать обучение?</h2>
+        <p>Зарегистрируйтесь сейчас и получите первое занятие со скидкой 20%</p>
+        <div class="cta-buttons">
+          <button class="btn-primary">Найти репетитора</button>
+          <button class="btn-secondary">Узнать больше</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>TutorHub</h4>
+            <p>Платформа для поиска репетиторов и онлайн-обучения</p>
+          </div>
+          <div class="footer-section">
+            <h4>Ссылки</h4>
+            <ul>
+              <li><a href="#home">Главная</a></li>
+              <li><a href="#tutors">Репетиторы</a></li>
+              <li><a href="#about">О нас</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Контакты</h4>
+            <ul>
+              <li>Email: info@tutorhub.ru</li>
+              <li>Телефон: +7 (999) 123-45-67</li>
+              <li>Адрес: г. Москва, ул. Примера, 1</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Следите за нами</h4>
+            <div class="social-links">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">ВКонтакте</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 TutorHub. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Модальное окно входа -->
+    <div id="loginModal" class="modal hidden">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2>Вход</h2>
+        <form id="loginForm">
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Пароль" required />
+          <button type="submit" class="btn-primary">Войти</button>
+        </form>
+        <p class="modal-text">Нет аккаунта? <a href="#signup">Зарегистрируйтесь</a></p>
+      </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div id="signupModal" class="modal hidden">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2>Регистрация</h2>
+        <form id="signupForm">
+          <input type="text" placeholder="Полное имя" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Пароль" required />
+          <input type="password" placeholder="Повторите пароль" required />
+          <button type="submit" class="btn-primary">Зарегистрироваться</button>
+        </form>
+        <p class="modal-text">Уже есть аккаунт? <a href="#login">Войдите</a></p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
