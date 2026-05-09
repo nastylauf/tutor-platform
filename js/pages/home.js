@@ -16,6 +16,8 @@ export function initHome() {
     }, 400);
   }
 
+  const searchButton = document.querySelector('.btn-search');
+
   if (searchInput) {
     searchInput.addEventListener(
       'input',
@@ -26,6 +28,17 @@ export function initHome() {
         }
       }, 500)
     );
+  }
+
+  if (searchButton && searchInput) {
+    searchButton.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (query.length > 2) {
+        smoothNavigate(`tutors.html?search=${encodeURIComponent(query)}`);
+      } else {
+        alert('Введите не менее 3 символов для поиска.');
+      }
+    });
   }
 
   // Клик по популярным предметам

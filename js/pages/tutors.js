@@ -3,6 +3,7 @@ import { getTutorsData } from '../data/tutors.js';
 import { debounce, getFromLocalStorage, saveToLocalStorage } from '../modules/utils.js';
 
 let currentTutors = [];
+let originalTutors = [];
 
 export async function initTutorsPage() {
   // Показать индикатор загрузки
@@ -12,9 +13,11 @@ export async function initTutorsPage() {
   // Загрузка данных из API
   try {
     currentTutors = await getTutorsData();
+    originalTutors = [...currentTutors];
   } catch (error) {
     console.error('Failed to load tutors data:', error);
     // Данные уже загружены в getTutorsData как fallback
+    originalTutors = [...currentTutors];
   }
 
   // Плавное появление страницы
@@ -28,7 +31,6 @@ export async function initTutorsPage() {
   const filterPrice = document.getElementById('filterPrice');
   const filterRating = document.getElementById('filterRating');
   const sortSelect = document.getElementById('sortSelect');
-  const tutorsGrid = document.getElementById('tutorsGrid');
 
   function renderTutors(tutors) {
     if (tutors.length === 0) {
@@ -86,7 +88,7 @@ export async function initTutorsPage() {
   }
 
   function filterAndSortTutors() {
-    let filtered = [...currentTutors];
+    let filtered = [...originalTutors];
 
     const searchValue = searchInput.value.toLowerCase().trim();
     const subject = filterSubject.value;

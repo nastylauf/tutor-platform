@@ -9,6 +9,17 @@ export function initNavbar() {
     if (currentPage.includes(href) || (currentPage === 'index.html' && href === 'home')) {
       link.classList.add('active');
     }
+
+    link.addEventListener('click', (event) => {
+      const targetHref = link.getAttribute('href');
+      if (!targetHref || targetHref.startsWith('#')) return;
+      event.preventDefault();
+      document.body.style.transition = 'opacity 0.4s ease';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = targetHref;
+      }, 300);
+    });
   });
 
   // Модальные окна входа и регистрации
