@@ -4,9 +4,11 @@ import { initHome } from './pages/home.js';
 import { initTutorsPage } from './pages/tutors.js';
 import { initSubjectsPage } from './pages/subjects.js';
 import { initProfilePage } from './pages/profile.js';
+import { initThemeToggle } from './modules/theme.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   initNavbar();
+  initThemeToggle();
 
   const path = window.location.pathname.toLowerCase();
 

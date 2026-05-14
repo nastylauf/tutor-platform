@@ -3,8 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ✨ НОВОЕ: поддержка системной цветовой схемы -->
+    <meta name="color-scheme" content="light dark" />
     <title>Репетиторы — TutorHub</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- ✨ НОВОЕ: микро-скрипт для предотвращения мерцания темы при загрузке -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem('user-theme-preference');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && systemDark)) {
+          document.documentElement.classList.add('theme_dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- Навигация -->
@@ -25,6 +37,16 @@
             <button class="btn-login">Вход</button>
             <button class="btn-signup">Регистрация</button>
           </div>
+          <!-- ✨ НОВОЕ: Переключатель темы (БЭМ-блок theme-toggle) -->
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Переключить тему"
+            data-theme-toggle
+          >
+            <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">☀️</span>
+            <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">🌙</span>
+          </button>
         </div>
       </div>
     </nav>
